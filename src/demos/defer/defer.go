@@ -3,9 +3,9 @@ package deferDemo
 import "fmt"
 
 /**
-defer: 时Golang提供的一种用于注册延迟调用的机制，让函数或语句可以在当前函数执行完毕后(包括通过return正常结束)执行
-1. 多个defer执行顺序: defer语句采用压栈方式，LIFO，后声明的先被调用
-2. defer与return的执行顺序：return先于defer执行
+  defer: Golang提供的一种用于注册延迟调用的机制，让函数或语句可以在当前函数执行完毕后(包括通过return正常结束)执行
+	1. 多个defer执行顺序: defer语句采用压栈方式，LIFO，后声明的先被调用
+	2. defer与return的执行顺序：return先于defer执行
 */
 
 func test1() {
