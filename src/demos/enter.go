@@ -2,6 +2,7 @@ package main
 
 import (
 	ar "demos/array"
+	"demos/class"
 	dd "demos/defer"
 	fu "demos/function" // 别名导入
 	"demos/pointer"
@@ -46,4 +47,10 @@ func main() {
 	// array
 	fmt.Println("-------------array--------------")
 	ar.TestArray()
+
+	// class
+	fmt.Println("-------------class--------------")
+	cla.TestClass()
+	cla.TestInherit()
+	cla.TestPolymorphisms()
 }
