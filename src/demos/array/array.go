@@ -25,6 +25,43 @@ func dynamicArray(arr []int) {
 
 }
 
+// 通过make分配空间并初始化
+func makeSlice() {
+	var slice1 []int //此时，slice1没有被分配地址空间
+	if slice1 == nil {
+		fmt.Println("slice1 is nil")
+	}
+	slice1 = make([]int, 3)
+	slice1[0] = 1
+	fmt.Printf("slice1 length, %d, slice value: %v\n", len(slice1), slice1)
+
+	// 3长度，5容量，容量>=长度
+	slice2 := make([]int, 3, 4)
+	fmt.Printf("slice2 length, %d, slice2 capacity: %d, slice2 values: %v\n", len(slice2), cap(slice2), slice2)
+
+	// append方法，向切片尾部添加元素，当capacity足够时，直接添加；capacity不够时，创建新的切片，capacity是原来的2倍
+	slice2 = append(slice2, 1)
+	fmt.Printf("slice2 length, %d, slice2 capacity: %d, slice2 values: %v\n", len(slice2), cap(slice2), slice2)
+	slice2 = append(slice2, 2)
+	fmt.Printf("slice2 length, %d, slice2 capacity: %d, slice2 values: %v\n", len(slice2), cap(slice2), slice2)
+
+	/**
+	  切片截取
+		1. [:]，通过下标区间方式进行截取，左闭右开，下标值在源切片capacity范围内，新切片和源切片指向同一地址
+		2. 使用copy函数进行深拷贝，新切片与源切片指向不通地址
+	*/
+	slice3 := make([]int, 3, 4)
+	fmt.Printf("slice3 values: %v\n", slice3)
+	slice4 := slice3[0:4]
+	fmt.Printf("slice4 values: %v\n", slice4)
+	slice5 := make([]int, 3)
+	copy(slice3, slice5)
+	fmt.Printf("slice5 values: %v\n", slice5)
+	slice3[1] = 2
+	fmt.Printf("slice4 values: %v\n", slice4)
+	fmt.Printf("slice5 values: %v\n", slice5)
+}
+
 func TestArray() {
 	// 定义静态数组
 	myArray1 := [3]int{1, 2, 3}
@@ -46,4 +83,6 @@ func TestArray() {
 	for index, value := range myArray3 {
 		fmt.Println(index, "--->", value)
 	}
+
+	makeSlice()
 }
