@@ -25,7 +25,7 @@ func dynamicArray(arr []int) {
 
 }
 
-func TestStaticArray() {
+func TestArray() {
 	// 定义静态数组
 	myArray1 := [3]int{1, 2, 3}
 	myArray2 := [4]int{1, 2, 3}
@@ -46,5 +46,4 @@ func TestStaticArray() {
 	for index, value := range myArray3 {
 		fmt.Println(index, "--->", value)
 	}
-
 }

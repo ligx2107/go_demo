@@ -3,11 +3,19 @@ package main
 import (
 	ar "demos/array"
 	dd "demos/defer"
-	fu "demos/function" // 别名导入，在调用程序中为导入包指定别名，并使用别名进行调用
+	fu "demos/function" // 别名导入
 	"demos/pointer"
-	vd "demos/variable" // 匿名导入，导入的包可以不在程序中使用
+	vd "demos/variable"
 	"fmt"
 )
+
+/**
+  import导入说明：
+	1. import ""单个导入，import()多个导入
+	2. import的参数为欲导入文件的路径，与导入文件的package无关
+	3. 别名导入，在调用程序中为导入包指定别名，并使用别名进行调用
+	4. 匿名导入(_)，导入的包不在程序中使用，但包中的init方法会被调用
+*/
 
 func main() {
 	// 调用导入文件内方法，使用"包名.方法名"根式，与文件路径无关
@@ -37,5 +45,5 @@ func main() {
 
 	// array
 	fmt.Println("-------------array--------------")
-	ar.TestStaticArray()
+	ar.TestArray()
 }
