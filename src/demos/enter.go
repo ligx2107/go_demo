@@ -58,6 +58,7 @@ func main() {
 	// struct
 	fmt.Println("-------------struct--------------")
 	sd.TestStruct()
+	sd.TestStructTag()
 
 	// class
 	fmt.Println("-------------class--------------")
