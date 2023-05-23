@@ -4,7 +4,7 @@ import "fmt"
 
 /*
 	  断言：
-		1. 万能类型：interface{}
+		1. 万能类型：interface{}可以作为任何类型数据容器
 		2. 万能类型可通过断言语法，判断引用的底层真实数据类型
 */
 func assertionFunc(arg interface{}) {

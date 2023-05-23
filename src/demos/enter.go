@@ -7,6 +7,7 @@ import (
 	fu "demos/function" // 别名导入
 	"demos/map"
 	"demos/pointer"
+	ref "demos/reflect"
 	"demos/struct"
 	vd "demos/variable"
 	"fmt"
@@ -65,4 +66,8 @@ func main() {
 	cla.TestPolymorphisms()
 	cla.TestAssertion()
 	cla.TestPair()
+
+	// reflect
+	fmt.Println("-------------reflect--------------")
+	ref.TestReflect()
 }

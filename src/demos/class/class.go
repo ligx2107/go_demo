@@ -27,7 +27,7 @@ func (this *Student) setGender(gender string) {
 	this.gender = gender
 }
 
-func (this *Student) showInfo() {
+func (this Student) showInfo() {
 	fmt.Println("student info -->", this)
 }
 
