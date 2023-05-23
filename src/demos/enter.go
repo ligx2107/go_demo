@@ -5,6 +5,7 @@ import (
 	"demos/class"
 	dd "demos/defer"
 	fu "demos/function" // 别名导入
+	gr "demos/goroutine"
 	"demos/map"
 	"demos/pointer"
 	ref "demos/reflect"
@@ -71,4 +72,9 @@ func main() {
 	// reflect
 	fmt.Println("-------------reflect--------------")
 	ref.TestReflect()
+
+	// goroutine
+	fmt.Println("-------------goroutine--------------")
+	//gr.TestGoroutine()
+	gr.TestChannel()
 }
