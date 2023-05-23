@@ -4,7 +4,9 @@ import (
 	ar "demos/array"
 	dd "demos/defer"
 	fu "demos/function" // 别名导入
+	"demos/map"
 	"demos/pointer"
+	"demos/struct"
 	vd "demos/variable"
 	"fmt"
 )
@@ -46,4 +48,12 @@ func main() {
 	// array
 	fmt.Println("-------------array--------------")
 	ar.TestArray()
+
+	// map
+	fmt.Println("-------------map--------------")
+	md.TestMap()
+
+	// struct
+	fmt.Println("-------------struct--------------")
+	sd.TestStruct()
 }
