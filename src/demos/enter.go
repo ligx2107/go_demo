@@ -63,4 +63,6 @@ func main() {
 	cla.TestClass()
 	cla.TestInherit()
 	cla.TestPolymorphisms()
+	cla.TestAssertion()
+	cla.TestPair()
 }
