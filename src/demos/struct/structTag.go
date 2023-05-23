@@ -31,6 +31,11 @@ func parseJson(book Book1) {
 		return
 	}
 	fmt.Println("json -->", string(jsonStr))
+
+	// json转结构体
+	myBook := Book1{}
+	json.Unmarshal(jsonStr, &myBook)
+	fmt.Printf("%v\n", myBook)
 }
 
 func TestStructTag() {
