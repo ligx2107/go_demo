@@ -2,6 +2,7 @@ package main
 
 import (
 	ar "demos/array"
+	"demos/class"
 	dd "demos/defer"
 	fu "demos/function" // 别名导入
 	"demos/map"
@@ -56,4 +57,10 @@ func main() {
 	// struct
 	fmt.Println("-------------struct--------------")
 	sd.TestStruct()
+
+	// class
+	fmt.Println("-------------class--------------")
+	cla.TestClass()
+	cla.TestInherit()
+	cla.TestPolymorphisms()
 }
