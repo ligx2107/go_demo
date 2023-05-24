@@ -77,4 +77,5 @@ func main() {
 	fmt.Println("-------------goroutine--------------")
 	//gr.TestGoroutine()
 	gr.TestChannel()
+	gr.TestSelect()
 }
