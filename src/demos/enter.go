@@ -3,6 +3,7 @@ package main
 import (
 	ar "demos/array"
 	"demos/class"
+	"demos/closure"
 	dd "demos/defer"
 	fun "demos/function"
 	gr "demos/goroutine"
@@ -75,6 +76,10 @@ func main() {
 	//gr.TestGoroutine()
 	gr.TestChannel()
 	gr.TestSelect()
+
+	// closure
+	fmt.Println("-------------closure--------------")
+	closure.TestClosure()
 
 	// others
 	fmt.Println("-------------others--------------")
