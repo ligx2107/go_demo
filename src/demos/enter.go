@@ -4,7 +4,7 @@ import (
 	ar "demos/array"
 	"demos/class"
 	dd "demos/defer"
-	fu "demos/function" // 别名导入
+	fun "demos/function"
 	gr "demos/goroutine"
 	"demos/map"
 	"demos/pointer"
@@ -31,10 +31,7 @@ func main() {
 
 	// function
 	fmt.Println("-------------function--------------")
-	r1, r2 := fu.MultipleAnonymousReturn("world", 100)
-	fmt.Println("r1 =", r1, "r2 =", r2)
-	r3, r4 := fu.MultipleNamedReturn("Golang", 200)
-	fmt.Println("r3 =", r3, "r4 =", r4)
+	fun.TestFunction()
 
 	// pointer
 	fmt.Println("-------------pointer--------------")
@@ -78,4 +75,7 @@ func main() {
 	//gr.TestGoroutine()
 	gr.TestChannel()
 	gr.TestSelect()
+
+	// others
+	fmt.Println("-------------others--------------")
 }
