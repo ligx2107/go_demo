@@ -45,6 +45,7 @@ func main() {
 	fmt.Println("-------------defer--------------")
 	dd.DeferFunc()
 	dd.DeferReturnFunc()
+	dd.DeferClosure()
 
 	// array
 	fmt.Println("-------------array--------------")

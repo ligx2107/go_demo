@@ -36,3 +36,22 @@ func DeferReturnFunc() int {
 	defer deferFun()
 	return returnFun()
 }
+
+type Person struct {
+	name string
+}
+
+func (p *Person) printName() {
+	fmt.Println("person name: ", p.name)
+}
+
+func DeferClosure() {
+	persons := []Person{Person{"zhangsan"}, Person{"lisi"}, Person{"wangwu"}}
+	for _, p := range persons {
+		defer p.printName()
+	}
+
+	for i := 0; i < len(persons); i++ {
+		defer persons[i].printName()
+	}
+}
