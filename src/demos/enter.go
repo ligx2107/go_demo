@@ -5,6 +5,7 @@ import (
 	"demos/class"
 	"demos/closure"
 	dd "demos/defer"
+	err "demos/errors"
 	fun "demos/function"
 	gr "demos/goroutine"
 	"demos/map"
@@ -81,6 +82,10 @@ func main() {
 	// closure
 	fmt.Println("-------------closure--------------")
 	closure.TestClosure()
+
+	// error
+	fmt.Println("-------------error--------------")
+	err.TestErrorHandle()
 
 	// others
 	fmt.Println("-------------others--------------")
