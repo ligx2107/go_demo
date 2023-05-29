@@ -12,6 +12,7 @@ import (
 	"demos/pointer"
 	ref "demos/reflect"
 	"demos/struct"
+	syncd "demos/sync"
 	vd "demos/variable"
 	"fmt"
 )
@@ -87,6 +88,10 @@ func main() {
 	fmt.Println("-------------error--------------")
 	err.TestErrorHandle()
 	err.TestPanic()
+
+	// sync
+	fmt.Println("-------------sync---------------")
+	syncd.TestSync()
 
 	// others
 	fmt.Println("-------------others--------------")
