@@ -86,6 +86,7 @@ func main() {
 	// error
 	fmt.Println("-------------error--------------")
 	err.TestErrorHandle()
+	err.TestPanic()
 
 	// others
 	fmt.Println("-------------others--------------")
