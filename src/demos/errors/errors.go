@@ -12,6 +12,7 @@ import (
 		2. golang中没有try catch语法来捕获异常
 		3. 可以自定义错误格式
 		4. 通过标准库中的errors包来创建错误，可自定义错误内容
+		5. error不会终止程序继续向下执行
 */
 
 func sqrt(num float64) (result float64, error error) {

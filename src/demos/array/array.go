@@ -2,7 +2,7 @@ package array
 
 import "fmt"
 
-// 声明函数，参数为静态数组类型
+// 声明函数，参数为数组类型
 func staticArray(arr1 [3]int) {
 	// 遍历数组，输出数组内数据
 	// 1. 传统方式
@@ -16,7 +16,7 @@ func staticArray(arr1 [3]int) {
 	}
 }
 
-// 声明函数，参数为动态数组类型
+// 声明函数，参数为切片类型
 func dynamicArray(arr []int) {
 	// 修改数组元素
 	for index, value := range arr {
