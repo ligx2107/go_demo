@@ -7,6 +7,7 @@ import (
 	dd "demos/defer"
 	err "demos/errors"
 	fun "demos/function"
+	"demos/generic"
 	gr "demos/goroutine"
 	"demos/map"
 	"demos/pointer"
@@ -92,6 +93,10 @@ func main() {
 	// sync
 	fmt.Println("-------------sync---------------")
 	syncd.TestSync()
+
+	// generic
+	fmt.Println("-------------generic---------------")
+	generic.TestGeneric()
 
 	// others
 	fmt.Println("-------------others--------------")
