@@ -1,9 +1,12 @@
 package main
 
 import (
+	"context"
 	ar "demos/array"
+	atomicdemo "demos/atomic"
 	"demos/class"
 	"demos/closure"
+	contextdemo "demos/context"
 	dd "demos/defer"
 	err "demos/errors"
 	fun "demos/function"
@@ -16,6 +19,8 @@ import (
 	syncd "demos/sync"
 	vd "demos/variable"
 	"fmt"
+	"os"
+	"os/signal"
 )
 
 /**
@@ -94,9 +99,20 @@ func main() {
 	fmt.Println("-------------sync---------------")
 	syncd.TestSync()
 
+	// atomic
+	fmt.Println("-------------atomic---------------")
+	atomicdemo.TestAtomic()
+
 	// generic
 	fmt.Println("-------------generic---------------")
 	generic.TestGeneric()
+
+	// context
+	fmt.Println("------------context----------------")
+	contextdemo.TestContext()
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
+	defer cancel()
+	<-ctx.Done()
 
 	// others
 	fmt.Println("-------------others--------------")
