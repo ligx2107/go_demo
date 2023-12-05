@@ -24,7 +24,7 @@ func analyzeStructTag(str Book1) {
 }
 
 func parseJson(book Book1) {
-	// json.Marshal()方法，将结构体转为json，结构体属性必须是共有的
+	// json.Marshal()方法，将结构体转为json，结构体属性必须是公有的
 	jsonStr, err := json.Marshal(book)
 	if err != nil {
 		fmt.Println("parse json error")
