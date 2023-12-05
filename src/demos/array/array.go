@@ -47,18 +47,22 @@ func makeSlice() {
 
 	/**
 	  切片截取
-		1. [:]，通过下标区间方式进行截取，左闭右开，下标值在源切片capacity范围内，新切片和源切片指向同一地址
-		2. 使用copy函数进行深拷贝，新切片与源切片指向不通地址
+		1. [:]，通过下标区间方式进行截取，左闭右开，下标值在源切片capacity范围内(超出范围则出现异常)，新切片和源切片地址指向同一内存空间
+		2. 使用copy函数进行深拷贝，新切片与源切片地址指向不同内存空间
 	*/
 	slice3 := make([]int, 3, 4)
 	fmt.Printf("slice3 values: %v\n", slice3)
 	slice4 := slice3[0:4]
 	fmt.Printf("slice4 values: %v\n", slice4)
+	//fmt.Printf("slice3 address: %p, slice4 address: %p\n", &slice3, &slice4)
+	slice4[1] = 2
+	fmt.Printf("after change, slice3 values: %v\n", slice3)
+
 	slice5 := make([]int, 3)
 	copy(slice3, slice5)
 	fmt.Printf("slice5 values: %v\n", slice5)
-	slice3[1] = 2
-	fmt.Printf("slice4 values: %v\n", slice4)
+	slice5[1] = 2
+	fmt.Printf("slice3 values: %v\n", slice3)
 	fmt.Printf("slice5 values: %v\n", slice5)
 }
 
