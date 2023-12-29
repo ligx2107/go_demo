@@ -2,6 +2,10 @@ package cla
 
 import "fmt"
 
+/**
+* 	继承：golang本身不支持继承，但可以通过匿名属性的方式模拟继承
+ */
+
 // 定义父类
 type Human struct {
 	name string
@@ -17,9 +21,9 @@ func (this *Human) walk() {
 	fmt.Println("Human walk....")
 }
 
-// 定义子类继承父类
+// 通过匿名属性的方式模拟继承
 type SuperHuman struct {
-	Human         // 标识SuperHuman继承自Human父类
+	Human         // 匿名属性
 	gender string // 定义子类属性
 }
 
