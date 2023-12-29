@@ -75,6 +75,7 @@ func main() {
 	cla.TestPolymorphisms()
 	cla.TestAssertion()
 	cla.TestPair()
+	cla.TestMethodSet()
 
 	// reflect
 	fmt.Println("-------------reflect--------------")
