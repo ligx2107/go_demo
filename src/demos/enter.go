@@ -83,6 +83,8 @@ func main() {
 
 	// goroutine
 	fmt.Println("-------------goroutine--------------")
+	gr.TestGosched()
+	gr.TestGoexit()
 	//gr.TestGoroutine()
 	gr.TestChannel()
 	gr.TestSelect()
