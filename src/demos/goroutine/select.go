@@ -6,7 +6,7 @@ import (
 )
 
 /*
-	select多路复用：同时监听一个或多个channel，直到其中一个channel ready，如果多个channel同时ready，则随机选择一个执行
+	select多路复用：同时监听一个或多个channel，直到其中一个channel ready，如果多个channel同时ready，则随机选择一个执行，所有channel都不可用时，执行default语句
 	select {
 		case <- chan1:
 			如果chan1成功读取数据，则执行该case处理语句
