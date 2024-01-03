@@ -7,8 +7,10 @@ import (
 /*
 	golang变量类型
 		1. 值类型：int, float, bool, string, struct, array等，在做等号赋值操作或函数传参时，进行拷贝复制，值传递
-		2. 引用类型：slice, map, channel, interface, 等号赋值或函数传参时，传递的是指向值的指针
-		3. make和new：make是初始化内置的数据结构(slice, map, channel)，new是根据传入的类型，分配一片内存空间并返回指向这片内存空间的指针
+		2. 引用类型：slice, map, channel, 等号赋值或函数传参时，传递的是指向值的指针
+		3. make和new：
+			make是初始化内置的数据结构(slice, map, channel)，可完成全部内存分配和相关属性的初始化
+			new是按指定类型长度分配零值内存空间，并返回指向这片内存空间的指针，不关心类型内部构造和初始化方式
 */
 
 func VariableDeclaration() {
