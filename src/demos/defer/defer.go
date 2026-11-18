@@ -7,7 +7,12 @@ import "fmt"
 	1. defer后面的语句在执行的时候，函数调用的参数会被保存起来(参数预计算)，但是不执行
 	2. 多个defer执行顺序: defer语句采用压栈方式，LIFO，后声明的先被调用
 	3. defer与return的执行顺序：return先于defer执行
-	4. 方法正常结束和异常结束都会调用defer声明的延迟函数，可以有效避免因异常导致的资源无法释放的问题ß
+	4. 方法正常结束和异常结束都会调用defer声明的延迟函数，可以有效避免因异常导致的资源无法释放的问题
+	5. defer的执行时机取决于函数，而不是代码块
+		- 普通代码块结束：不会触发defer
+		- for单次循环结束：不会触发defer
+ 		- if分支结束：不会触发defer
+		- 所属函数结束：执行defer
 */
 
 func test1() {
@@ -50,7 +55,7 @@ func (p *Person) printName() {
 func DeferClosure() {
 	persons := []Person{Person{"zhangsan"}, Person{"lisi"}, Person{"wangwu"}}
 	for _, p := range persons {
-		defer p.printName()
+		func() { defer p.printName() }()
 	}
 
 	for i := 0; i < len(persons); i++ {
