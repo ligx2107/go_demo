@@ -2,7 +2,7 @@
 module demos
 
 // go sdk 版本
-go 1.20
+go 1.27
 
 // 当前module依赖的包
 require (
