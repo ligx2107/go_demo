@@ -9,7 +9,7 @@ import "runtime"
  */
 
 func TestGosched() {
-	runtime.GOMAXPROCS(1)       // 单线程执行
+	runtime.GOMAXPROCS(1)       // 设定只有一个逻辑处理器P
 	exit := make(chan struct{}) // 声明一个空结构体类型的channel
 
 	go func() {
@@ -32,7 +32,7 @@ func TestGosched() {
 
 func TestGoexit() {
 
-	runtime.GOMAXPROCS(1)       // 单线程执行
+	runtime.GOMAXPROCS(1)       // 设定只有一个逻辑处理器P
 	exit := make(chan struct{}) // 声明一个空结构体类型的channel
 
 	go func() {
