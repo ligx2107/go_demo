@@ -15,8 +15,8 @@ import (
 		6. channel的基本操作：
 			6.1 发送： ch <- 数据
 			6.2 接收： x := <- ch
-			6.3 关闭： close(ch)，如果不在向channel内写入数据或从channel中读取数据，关闭channel
-				6.3.1 读取数据goroutine判断channel是否关闭的方式： (data,ok := <- ch, ok为false时，表示channel以关闭)，(使用for range方式)
+			6.3 关闭： close(ch)，如果不再向channel内写入数据或从channel中读取数据，关闭channel
+				6.3.1 读取数据goroutine判断channel是否关闭的方式： (data,ok := <- ch, ok为false时，表示channel已关闭)，(使用for range方式)
 				6.3.2 关闭channel后，再向channel中写入数据会引发panic
 				6.3.3 关闭channel后，再从channel中读取数据不会引发panic，读取到的数据为channel类型的零值或已缓存的数据
 				6.3.4 重复关闭或关闭nil channel会引发panic
