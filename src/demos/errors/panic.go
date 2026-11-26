@@ -46,7 +46,7 @@ func multipleDefer() {
 }
 
 func TestPanic() {
-	fmt.Println(panicDemo(5, 0))
+	fmt.Println("return value --> ", panicDemo(5, 0))
 	fmt.Println("after panic")
 
 	multipleDefer()
