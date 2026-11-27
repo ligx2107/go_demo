@@ -50,15 +50,22 @@ func testCond() {
 	cond := sync.NewCond(&sync.Mutex{})
 
 	// 启用协程读取list中数据
-	go readList(&list, cond)
-	go readList(&list, cond)
-	go readList(&list, cond)
+	var wg sync.WaitGroup
+	wg.Add(3)
+	for i := 0; i < 3; i++ {
+		go func() {
+			defer wg.Done()
+			readList(&list, cond)
+		}()
+	}
 
 	// 模拟
 	time.Sleep(time.Second * 2)
 
 	// 主协程写入数据
 	initList(&list, cond)
+
+	wg.Wait()
 }
 
 func initList(list *[]int, cond *sync.Cond) {
@@ -129,8 +136,8 @@ func testMutex() {
 }
 
 func TestSync() {
-	testWaitGroup()
-	testOnce()
-	testMutex()
+	//testWaitGroup()
+	//testOnce()
+	//testMutex()
 	testCond()
 }
