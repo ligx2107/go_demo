@@ -121,6 +121,29 @@ func testGenericMethod() {
 	fmt.Println("exist: ", s.exist(4))
 }
 
+func contains[T comparable](arr []T, target T) bool {
+	for _, v := range arr {
+		if v == target {
+			return true
+		}
+	}
+
+	return false
+}
+
+// filter function with generics
+func filter[T interface{}](values []T, predicate func(T) bool) []T {
+	matchItems := make([]T, 0)
+
+	for _, v := range values {
+		if predicate(v) {
+			matchItems = append(matchItems, v)
+		}
+	}
+
+	return matchItems
+}
+
 func TestGeneric() {
 	testGenericSlice()
 	testGenericMap()
@@ -128,4 +151,6 @@ func TestGeneric() {
 	testNestedGeneric()
 	testGenericFunc(1.1, 2.2, 3.3)
 	testGenericMethod()
+	fmt.Println("contains specific element --> ", contains([]int{1, 2, 3}, 2))
+	fmt.Println("match items --> ", filter([]int{1, 2, 3, 4, 5, 6}, func(value int) bool { return value%2 == 0 }))
 }
